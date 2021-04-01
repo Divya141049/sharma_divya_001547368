@@ -74,12 +74,13 @@ public class MainJFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
-        jPanel1.setBackground(new java.awt.Color(194, 128, 128));
+        jPanel1.setBackground(new java.awt.Color(209, 133, 133));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 10)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("USER NAME");
 
+        userNameJTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         userNameJTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userNameJTextFieldActionPerformed(evt);
@@ -89,6 +90,8 @@ public class MainJFrame extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 10)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("PASSWORD");
+
+        passwordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         loginJButton.setFont(new java.awt.Font("Tahoma", 3, 8)); // NOI18N
         loginJButton.setText("LOGIN");
@@ -114,34 +117,34 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(loginJLabel))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(userNameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(31, 31, 31))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(loginJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(23, 23, 23)
                 .addComponent(logoutJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(loginJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(128, 128, 128)
+                                .addComponent(loginJLabel))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(userNameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {passwordField, userNameJTextField});
@@ -149,21 +152,21 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(loginJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
+                .addGap(90, 90, 90)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(userNameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
-                .addComponent(loginJLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
+                .addComponent(userNameJTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
+                .addGap(38, 38, 38)
+                .addComponent(loginJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(loginJLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
                 .addComponent(logoutJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addGap(57, 57, 57))
         );
 
         jSplitPane1.setLeftComponent(jPanel1);
@@ -171,7 +174,8 @@ public class MainJFrame extends javax.swing.JFrame {
         container.setBackground(new java.awt.Color(151, 145, 151));
         container.setLayout(new java.awt.CardLayout());
 
-        lblTitle.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        lblTitle.setBackground(new java.awt.Color(86, 64, 0));
+        lblTitle.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(255, 255, 255));
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("FOOD DELIVERY SYSTEM");
@@ -186,18 +190,16 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void loginJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButtonActionPerformed
         
-//        String password =String.valueOf(passwordField.getPassword());
-//        System.out.println("aaaa" + password + userNameJTextField);
-
-        if(userNameJTextField.getText().isEmpty() || passwordField.getText().isEmpty()) {
+        String password =String.valueOf(passwordField.getPassword());
+        if(userNameJTextField.getText().isEmpty() || password.isEmpty()) {
            JOptionPane.showMessageDialog(null,"Username and Password field's cannot be empty");
            return;
         }
-        else if(system.getUserAccountDirectory().authenticateUser(userNameJTextField.getText(), passwordField.getText()) == null) {
+        else if(system.getUserAccountDirectory().authenticateUser(userNameJTextField.getText(), password) == null) {
            JOptionPane.showMessageDialog(null,"Invalid UserName");
             return;
        }
-        UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userNameJTextField.getText(), passwordField.getText());
+        UserAccount userAccount = system.getUserAccountDirectory().authenticateUser(userNameJTextField.getText(), password);
            System.out.println("ECOSYSTEM MAIN" + system.toString() + system.getUserAccountDirectory().getUserAccountList().size());
         
               CardLayout layout = (CardLayout) container.getLayout();

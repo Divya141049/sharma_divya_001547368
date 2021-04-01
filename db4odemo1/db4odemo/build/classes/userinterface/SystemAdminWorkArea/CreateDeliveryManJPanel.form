@@ -23,59 +23,64 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="258" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblLname" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
-                                      <Component id="lblFname" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="lblLname" alignment="0" min="-2" pref="103" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
+                                              <Component id="lblFname" min="-2" pref="100" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                              <Component id="txtFname" min="-2" pref="165" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="txtLname" min="-2" pref="165" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
                                   </Group>
-                              </Group>
-                              <EmptySpace min="73" pref="73" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtLname" alignment="1" min="-2" pref="165" max="-2" attributes="0"/>
-                                  <Component id="txtFname" alignment="1" min="-2" pref="165" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="lblPasswordCDM" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="lblUserNameCDM" alignment="1" pref="103" max="32767" attributes="0"/>
+                                          <Component id="lblEmailCDM" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="lblAgeCDM" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="lblAddressCDM" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="lblContactCDM" alignment="1" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="51" pref="51" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="txtContact" alignment="1" min="-2" pref="165" max="-2" attributes="0"/>
+                                          <Component id="txtAddress" alignment="1" min="-2" pref="165" max="-2" attributes="0"/>
+                                          <Component id="txtAge" alignment="1" min="-2" pref="165" max="-2" attributes="0"/>
+                                          <Component id="txtEmail" alignment="1" min="-2" pref="165" max="-2" attributes="0"/>
+                                          <Component id="txtPassword" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
+                                          <Component id="txtUsername" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="btnCreateCDM" alignment="1" min="-2" pref="69" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lblPasswordCDM" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="lblUserNameCDM" alignment="1" pref="103" max="32767" attributes="0"/>
-                                  <Component id="lblEmailCDM" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lblAgeCDM" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lblAddressCDM" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="lblContactCDM" alignment="1" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="51" pref="51" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtContact" alignment="1" min="-2" pref="165" max="-2" attributes="0"/>
-                                  <Component id="txtAddress" alignment="1" min="-2" pref="165" max="-2" attributes="0"/>
-                                  <Component id="txtAge" alignment="1" min="-2" pref="165" max="-2" attributes="0"/>
-                                  <Component id="txtEmail" alignment="1" min="-2" pref="165" max="-2" attributes="0"/>
-                                  <Component id="txtPassword" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
-                                  <Component id="txtUsername" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+                              <Component id="btnBackCDM" min="-2" pref="61" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="0" pref="110" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                      <Component id="btnBackCDM" min="-2" pref="61" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="titleCreateDeliveryMan" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="121" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="481" max="32767" attributes="0"/>
-              <Component id="btnCreateCDM" min="-2" pref="69" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="titleCreateDeliveryMan" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -92,12 +97,12 @@
                   <Component id="txtFname" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblFname" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="lblLname" alignment="1" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtLname" alignment="1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblLname" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtLname" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblEmailCDM" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtEmail" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -127,8 +132,9 @@
                   <Component id="lblPasswordCDM" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtPassword" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="54" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="btnCreateCDM" min="-2" pref="25" max="-2" attributes="0"/>
+              <EmptySpace pref="43" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -205,16 +211,34 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtUsername">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtContact">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPassword">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFname">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtLname">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAge">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="titleCreateDeliveryMan">
       <Properties>
@@ -229,6 +253,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtEmail">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblFname">
       <Properties>
@@ -240,6 +267,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAddress">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblLname">
       <Properties>

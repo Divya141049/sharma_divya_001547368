@@ -73,6 +73,10 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
         btnCreate = new javax.swing.JButton();
         lblName = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(151, 145, 151));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jPanel1.setBackground(new java.awt.Color(151, 145, 151));
 
         btnBack.setFont(new java.awt.Font("Tahoma", 3, 10)); // NOI18N
@@ -142,13 +146,13 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(148, 148, 148)
+                                .addGap(292, 292, 292)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(lblName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblAge, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                                    .addComponent(lblAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                                    .addComponent(lblEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                                    .addComponent(lblContact, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(lblAge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblAddress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblContact, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE))
                                 .addGap(55, 55, 55)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,7 +166,7 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(28, 28, 28)
                                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 284, Short.MAX_VALUE)))
+                        .addGap(0, 253, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -194,29 +198,10 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
                     .addComponent(txtContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(286, Short.MAX_VALUE))
+                .addContainerGap(307, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 783, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 746, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

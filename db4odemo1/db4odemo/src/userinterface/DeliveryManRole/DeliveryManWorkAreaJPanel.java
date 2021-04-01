@@ -44,6 +44,8 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
       
         
         populateTable();
+        
+        populateDeliveryManTable();
     }
     
     public void populateTable(){
@@ -52,7 +54,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for(Order ord : business.getOrderDirectory().getOrderDirectory()){
             
-            if(ord.getOrderStatus() !=null && ord.getOrderStatus().equals("Ready for Pick-up")){
+            if(ord.getOrderStatus() !=null && ord.getOrderStatus().equals("Order Ready for Pick up")){
                 
                 Object[] row=new Object[7];
                 row[0]=ord;
@@ -181,23 +183,6 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         add(titleDeliveryMan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 770, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
-
-        int selectedRow = workRequestJTable.getSelectedRow();
-        
-        if (selectedRow < 0){
-            JOptionPane.showMessageDialog(null, "Please select a row");
-            return;
-        }
-        
-        Order order = (Order)workRequestJTable.getValueAt(selectedRow, 0);
-        order.setDeliveryMan(userAccount.getEmployee().getName());
-        order.setOrderStatus("Order Picked Up");
-         populateTable();
-        populateDeliveryManTable();
-        
-    }//GEN-LAST:event_assignJButtonActionPerformed
-
     
     public void populateDeliveryManTable(){
         
@@ -252,7 +237,26 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
 
     private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
         populateTable();
+        
+        populateDeliveryManTable();
     }//GEN-LAST:event_refreshJButtonActionPerformed
+
+    private void assignJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assignJButtonActionPerformed
+
+        int selectedRow = workRequestJTable.getSelectedRow();
+
+        if (selectedRow < 0){
+            JOptionPane.showMessageDialog(null, "Please select a row");
+            return;
+        }
+
+        Order order = (Order)workRequestJTable.getValueAt(selectedRow, 0);
+        order.setDeliveryMan(userAccount.getEmployee().getName());
+        order.setOrderStatus("Order Picked Up");
+        populateTable();
+        populateDeliveryManTable();
+
+    }//GEN-LAST:event_assignJButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton assignJButton;

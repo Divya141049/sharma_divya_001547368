@@ -123,6 +123,8 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
 
         txtIN.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        txtPrice.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
         btnAddItem.setFont(new java.awt.Font("Tahoma", 3, 10)); // NOI18N
         btnAddItem.setText("ADD");
         btnAddItem.addActionListener(new java.awt.event.ActionListener() {

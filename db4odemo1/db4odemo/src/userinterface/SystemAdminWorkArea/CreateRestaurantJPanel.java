@@ -133,7 +133,7 @@ public class CreateRestaurantJPanel extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(191, 191, 191)
+                                .addGap(307, 307, 307)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -159,7 +159,7 @@ public class CreateRestaurantJPanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(67, 67, 67)
                                 .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 108, Short.MAX_VALUE)))
+                        .addGap(0, 110, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(

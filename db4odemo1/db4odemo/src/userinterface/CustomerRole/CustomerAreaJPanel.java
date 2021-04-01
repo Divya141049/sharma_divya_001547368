@@ -71,7 +71,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
             
             Object[] row=new Object[8];
             row[0]=order;
-            row[1]=order.getRestaurant().getRestaurantName();
+            row[1]=order.getMenu().getItemName();
             row[2]=order.getQuantity() * order.getMenu().getPrice();
             row[3]=order.getRestaurant().getRestaurantName();
             row[4]=order.getMessage();
@@ -89,7 +89,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     
     boxItemList.removeAllItems();
     boxItemList.addItem(" ");
-    for(Restaurant restaur:ecosystem.getRestaurantDirectory().getRestaurantDirectory()){
+    for(Restaurant restaur :ecosystem.getRestaurantDirectory().getRestaurantDirectory()){
         
         boxItemList.addItem(restaur.getRestaurantName());
     }
@@ -108,7 +108,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                 Object [] row=new Object[2];
                 row[0]=menu;
                 row[1]=menu.getPrice();
-                deftblemdl.addRow(row);
+                 deftblemdl.addRow(row);
             }
         
             
@@ -137,6 +137,9 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblItemPrice = new javax.swing.JTable();
         boxItemList = new javax.swing.JComboBox<>();
+        lblComment = new javax.swing.JLabel();
+        txtComment = new javax.swing.JTextField();
+        btnAddComment = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(151, 145, 151));
 
@@ -149,7 +152,7 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ORDER-ID", "ITEM-NAME", "PRICE", "RESTAURANT", "INSTRUCTIONS", "CUSTOMER", "STATUS", "QUANTITY"
+                "ORDER-ID", "ITEM-NAME", "PRICE", "RESTAURANT", "INSTRUCTIONS", "CUSTOMER", "STATUS", " QUANTITY"
             }
         ) {
             Class[] types = new Class [] {
@@ -215,25 +218,37 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
 
         boxItemList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        lblComment.setFont(new java.awt.Font("Tahoma", 3, 10)); // NOI18N
+        lblComment.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblComment.setText("COMMENT :");
+
+        txtComment.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        btnAddComment.setFont(new java.awt.Font("Tahoma", 3, 10)); // NOI18N
+        btnAddComment.setText("ADD COMMENT");
+        btnAddComment.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        btnAddComment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddCommentActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
+                        .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(86, 86, 86))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(lblQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -249,7 +264,21 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                         .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(refreshTestJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(107, 107, 107))))
+                        .addGap(105, 105, 105))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(156, 156, 156)
+                        .addComponent(lblComment, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAddComment)
+                            .addComponent(txtComment, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,20 +292,26 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
                     .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblQuantity)
-                            .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(71, 71, 71)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblQuantity))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(refreshTestJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                        .addComponent(refreshTestJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(217, 217, 217))))
+                        .addGap(18, 18, 18)
+                        .addComponent(txtComment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(lblComment)))
+                .addGap(18, 18, 18)
+                .addComponent(btnAddComment)
+                .addGap(53, 53, 53))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -328,16 +363,37 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
         populateTable();
     }//GEN-LAST:event_btnMenuActionPerformed
 
+    private void btnAddCommentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddCommentActionPerformed
+         //TODO add your handling code here:
+        if(txtComment.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "Field cannot be empty");
+              return;
+        }
+        
+        int selectedRow = workRequestJTable.getSelectedRow();
+        if(selectedRow<0){
+        JOptionPane.showMessageDialog(null, "Please select a row from table first ","Warning",JOptionPane.WARNING_MESSAGE);
+        return;
+        }
+        
+        Order ord=(Order)workRequestJTable.getValueAt(selectedRow, 0);
+        ord.setMessage(txtComment.getText());
+       populateRequestTable();
+    }//GEN-LAST:event_btnAddCommentActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> boxItemList;
+    private javax.swing.JButton btnAddComment;
     private javax.swing.JButton btnConfirm;
     private javax.swing.JButton btnMenu;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblComment;
     private javax.swing.JLabel lblQuantity;
     private javax.swing.JButton refreshTestJButton;
     private javax.swing.JTable tblItemPrice;
+    private javax.swing.JTextField txtComment;
     private javax.swing.JTextField txtQuantity;
     private javax.swing.JLabel valueLabel;
     private javax.swing.JTable workRequestJTable;

@@ -5,6 +5,8 @@
  */
 package userinterface.RestaurantAdminRole;
 
+import Business.DeliveryMan.DeliveryMan;
+import Business.DeliveryMan.DeliveryManDirectory;
 import Business.EcoSystem;
 import Business.Menu.MenuDirectory;
 import Business.Order.Order;
@@ -32,6 +34,7 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
     private RestaurantDirectory restaurantdirectory;
     private MenuDirectory menudirectory;
     private OrderDirectory orderdirectory;
+    private DeliveryManDirectory deliverymandirectory;
     
     
     
@@ -44,12 +47,18 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
         this.restaurantdirectory = ecosystem.getRestaurantDirectory();
         this.menudirectory = ecosystem.getMenuDirectory();
         this.orderdirectory = ecosystem.getOrderDirectory();
+        
+        this.deliverymandirectory = ecosystem.getDeliveryManDirectory();
         populateTable();
+        populateRestaurantCombo();
     }
     
     public void populateTable() {
         DefaultTableModel deftabmdl = (DefaultTableModel) tblOrder.getModel();
         deftabmdl.setRowCount(0);
+        
+        
+        
         
         for(Order order : ecosystem.getOrderDirectory().getOrderDirectory()) {
             System.out.println(" Rest  " + useraccount.getEmployee().getName() + "  " + order.getRestaurant().getRestaurantName());
@@ -64,6 +73,14 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
             }
         }
     }
+    
+    public final void populateRestaurantCombo(){
+    
+     comboDelivery.removeAll();
+        comboDelivery.addItem(" ");
+        for (DeliveryMan deliveryman : deliverymandirectory.getDeliveryManDirectory()) {
+            comboDelivery.addItem(deliveryman.getName());
+        }}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -80,6 +97,9 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
         btnBackMO = new javax.swing.JButton();
         btnAcceptMO = new javax.swing.JButton();
         btnCompleteMO = new javax.swing.JButton();
+        comboDelivery = new javax.swing.JComboBox<>();
+        lblAssignDelivery = new javax.swing.JLabel();
+        btnAssignDelivery = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(151, 145, 151));
 
@@ -129,6 +149,19 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
             }
         });
 
+        lblAssignDelivery.setFont(new java.awt.Font("Tahoma", 3, 10)); // NOI18N
+        lblAssignDelivery.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAssignDelivery.setText("DELIVERY MAN");
+
+        btnAssignDelivery.setFont(new java.awt.Font("Tahoma", 3, 10)); // NOI18N
+        btnAssignDelivery.setText("ASSIGN");
+        btnAssignDelivery.setBorder(new javax.swing.border.MatteBorder(null));
+        btnAssignDelivery.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAssignDeliveryActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -140,18 +173,23 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(79, 79, 79)
                 .addComponent(btnBackMO, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblAssignDelivery, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(comboDelivery, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAssignDelivery, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnAcceptMO, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(btnCompleteMO, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(115, 115, 115))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 693, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAcceptMO, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(btnCompleteMO, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(115, 115, 115))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 719, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,14 +197,18 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
                 .addGap(30, 30, 30)
                 .addComponent(titleManageOrder)
                 .addGap(40, 40, 40)
-                .addComponent(btnBackMO, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBackMO, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comboDelivery, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAssignDelivery)
+                    .addComponent(btnAssignDelivery, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAcceptMO, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCompleteMO, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addContainerGap(188, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -226,12 +268,42 @@ public class ManageOrderJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackMOActionPerformed
 
+    private void btnAssignDeliveryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignDeliveryActionPerformed
+        // TODO add your handling code here:int selectedRow = tblOrder.getSelectedRow();
+int selectedRow = tblOrder.getSelectedRow();
+        if (selectedRow < 0) {
+            JOptionPane.showMessageDialog(null, "Please select a row");
+            return;
+        }
+        Order order = (Order) tblOrder.getValueAt(selectedRow, 0);
+        if (comboDelivery.getSelectedIndex() == 0) {
+            JOptionPane.showMessageDialog(null, "Please select a delivery man");
+            return;
+        }
+        if (order.getOrderStatus().equals("Order Ready for Pick up")) {
+            for (DeliveryMan deliveryman : deliverymandirectory.getDeliveryManDirectory()) {
+                if (deliveryman.getName().equals(comboDelivery.getSelectedItem())) {
+                    order.setDeliveryMan(deliveryman.getEmail());
+                }
+            }
+            order.setOrderStatus("Order Picked Up");
+            JOptionPane.showMessageDialog(null, "Order assigned successfully");
+            populateTable();
+        } else {
+            JOptionPane.showMessageDialog(null, "Order is already accepted or Completed");
+            return;
+        }
+    }//GEN-LAST:event_btnAssignDeliveryActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAcceptMO;
+    private javax.swing.JButton btnAssignDelivery;
     private javax.swing.JButton btnBackMO;
     private javax.swing.JButton btnCompleteMO;
+    private javax.swing.JComboBox<String> comboDelivery;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAssignDelivery;
     private javax.swing.JTable tblOrder;
     private javax.swing.JLabel titleManageOrder;
     // End of variables declaration//GEN-END:variables
