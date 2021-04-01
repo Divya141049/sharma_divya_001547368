@@ -88,7 +88,7 @@
         <Component class="javax.swing.JLabel" name="lblBackgroundImage">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Divya Sharma\Desktop\AED\food delivery background.jpg"/>
+              <Image iconType="2" name="C:\Users\Divya Sharma\Desktop\AED\db4odemo\food delivery background.jpg"/>
             </Property>
           </Properties>
           <Constraints>

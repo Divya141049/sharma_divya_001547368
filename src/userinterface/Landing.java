@@ -57,7 +57,7 @@ public class Landing extends javax.swing.JFrame {
         jLabel1.setText("ICE & FIRE.........!");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 867, 63));
 
-        lblBackgroundImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\Divya Sharma\\Desktop\\AED\\food delivery background.jpg")); // NOI18N
+        lblBackgroundImage.setIcon(new javax.swing.ImageIcon("C:\\Users\\Divya Sharma\\Desktop\\AED\\db4odemo\\food delivery background.jpg")); // NOI18N
         jPanel1.add(lblBackgroundImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(-5, -6, 1690, 1060));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
